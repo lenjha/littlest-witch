@@ -1,0 +1,32 @@
+~~*~ The Littlest Witch ~*~~
+
+Use ES6 to generate different character types
+  White
+    High defense, low attack
+  Black
+    High attack, low defense
+  Red?
+    Average everything
+
+Battle System
+Determine condition for "win"
+  Gain EXP
+
+
+Slime, Cockroach, Rat, Crab, Fish Outta Water (auto-win)
+You either hit or miss Slime, inflicting damage (calc: this.attack)
+let hit = Math.random();
+
+
+
+
+Leveling System
+How to level up?
+  Calculate EXP-to-leveling ratio
+Gain attributes/powers?
+  Learn new spells?  Get boosts?
+
+Inventory
+Items to enhance abilities
+Limit on number of items a character can have
+Should be able to add, drop, buy, and sell items
