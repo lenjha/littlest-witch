@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
 var del = require('del');
+var jshint = require('gulp-jshint');
 var buildProduction = utilities.env.production;
 var lib = require('bower-files')({
   "overrides":{
@@ -17,7 +18,14 @@ var lib = require('bower-files')({
     }
   }
 });
+var browserSync = require('browser-sync').create();
 
+//linter to run on all files in js folder//
+gulp.task('jshint', function(){
+  return gulp.src(['js/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
 //concatenating all -interface.js and placing them in tmp folder//
 gulp.task('concatInterface', function() {
   return gulp.src(['./js/*-interface.js'])
@@ -68,4 +76,30 @@ gulp.task("build", ['clean'], function(){
   }
   gulp.start('bower');
   gulp.start('cssBuild');
+});
+//build a local server to work on your development build//
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+  // set up gulp watch to update the server//
+  gulp.watch(['js/*.js'], ['jsBuild']);
+  gulp.watch(['bower.json'], ['bowerBuild']);
+  gulp.watch(['*.html'], ['htmlBuild']);
+  gulp.watch(["scss/*.scss", "scss/**/*.scss"], ['cssBuild']);
+});
+//subtasks for gulp watch to reload the server//
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
+  browserSync.reload();
+});
+
+gulp.task('bowerBuild', ['bower'], function(){
+  browserSync.reload();
+});
+
+gulp.task('htmlBuild', function(){
+  browserSync.reload();
 });
