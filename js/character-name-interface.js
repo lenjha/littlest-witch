@@ -13,5 +13,3 @@
 //     console.log(charClass);
 //   });
 // });
-
-let experience = charClass.experience;

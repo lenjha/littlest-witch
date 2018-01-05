@@ -25,8 +25,9 @@ How to level up?
   Calculate EXP-to-leveling ratio
 Gain attributes/powers?
   Learn new spells?  Get boosts?
+  Constructor for leveling bonuses?
 
 Inventory
-Items to enhance abilities
-Limit on number of items a character can have
+Items to enhance abilities (some affect attributes)
+Limit on number of items a character can have (array.length <= MAX-AMOUNT)
 Should be able to add, drop, buy, and sell items

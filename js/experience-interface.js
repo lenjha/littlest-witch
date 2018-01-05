@@ -1,0 +1,1 @@
+let experience = charClass.experience;

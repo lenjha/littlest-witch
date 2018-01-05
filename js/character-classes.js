@@ -1,5 +1,6 @@
 export class WhiteWitch {
-  constructor(level, experience, magic, health, attack, defense, power) {
+  constructor(name, level, experience, magic, health, attack, defense, power) {
+    this.name = ;
     this.level = 1;
     this.experience = 0;
     this.magic = 5;
@@ -10,7 +11,8 @@ export class WhiteWitch {
   }
 }
 export class BlackWitch {
-  constructor(level, experience, magic, health, attack, defense, power) {
+  constructor(name, level, experience, magic, health, attack, defense, power) {
+    this.name = ;
     this.level = 1;
     this.experience = 0;
     this.magic = 5;
@@ -21,7 +23,8 @@ export class BlackWitch {
   }
 }
 export class GrayWitch {
-  constructor(level, experience, magic, health, attack, defense, power) {
+  constructor(name, level, experience, magic, health, attack, defense, power) {
+    this.name = ;
     this.level = 1;
     this.experience = 0;
     this.magic = 5;

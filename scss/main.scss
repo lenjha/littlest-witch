@@ -1,0 +1,17 @@
+body {
+  background: #333333;
+}
+
+.display {
+  width: 80vw;
+  height: 70vh;
+  margin: auto;
+  background: #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
